@@ -1,29 +1,15 @@
 from modelos.restaurante import Restaurante
+from modelos.cardapio.bebida import Bebida
+from modelos.cardapio.prato import Prato
 
 restaurante_praca = Restaurante('Praça', 'Brasileiro')
-restaurante_planet_pizza = Restaurante('Planet Pizza', 'Pizza')
-restaurante_mr_taxas = Restaurante('Mr Texas', 'Mexicano')
-
-restaurante_mr_taxas.alternar_estado()
-restaurante_planet_pizza.alternar_estado()
-restaurante_praca.alternar_estado()
-
-#Nota de 0 a 5
-restaurante_praca.receber_avaliacao('Diogo', 6)
-restaurante_praca.receber_avaliacao('Mariana', 2)
-restaurante_praca.receber_avaliacao('Clovisvaldo', 3)
-
-restaurante_mr_taxas.receber_avaliacao('João', 5)
-restaurante_mr_taxas.receber_avaliacao('Roberto', 3)
-restaurante_mr_taxas.receber_avaliacao('Adriana', 1)
-
-restaurante_planet_pizza.receber_avaliacao('Jhonny', 1)
-restaurante_planet_pizza.receber_avaliacao('Fernando', 4)
-restaurante_planet_pizza.receber_avaliacao('Cleide', 3)
-
+bebida_suco = Bebida('Suco de Uva', 5.0, 'Grande')
+prato_feijoada = Prato('Feijoada', 25.0, 'Melhor feijuca da cidade!')
+restaurante_praca.adicionar_no_cardapio(bebida_suco)
+restaurante_praca.adicionar_no_cardapio(prato_feijoada)
 
 def main():
-    Restaurante.listar_restaurantes()
+   restaurante_praca.exibir_cardapio
 
 
 if __name__ == '__main__':
